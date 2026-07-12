@@ -1,3 +1,7 @@
+output "cost_anomaly_alerts_id" {
+  description = "Map of id values across all cost_anomaly_alerts, keyed the same as var.cost_anomaly_alerts"
+  value       = { for k, v in azurerm_cost_anomaly_alert.cost_anomaly_alerts : k => v.id }
+}
 output "cost_anomaly_alerts_display_name" {
   description = "Map of display_name values across all cost_anomaly_alerts, keyed the same as var.cost_anomaly_alerts"
   value       = { for k, v in azurerm_cost_anomaly_alert.cost_anomaly_alerts : k => v.display_name }
